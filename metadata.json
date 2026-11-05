@@ -1,0 +1,6 @@
+{
+  "name": "Axiom Math Studio",
+  "description": "High-precision scientific workstation with advanced calculus, complex numbers, matrix linear algebra, interactive history tape, and customizable laboratory themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

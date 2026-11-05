@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+/* Design Tokens for Axiom Multi-Theme System */
+:root, [data-theme="ivory-graphite"] {
+  --axiom-bg: #F4F2ED;
+  --axiom-surface: #FFFFFF;
+  --axiom-surface-sub: #ECEAE4;
+  --axiom-primary: #25282B;
+  --axiom-secondary: #777A78;
+  --axiom-border: #E3E0D9;
+  --axiom-accent: #526B61;
+  --axiom-accent-hover: #435850;
+  --axiom-accent-text: #FFFFFF;
+  --axiom-canvas-fill: rgba(82, 107, 97, 0.16);
+  --axiom-scrollbar-thumb: #D8D5CD;
+  --axiom-scrollbar-thumb-hover: #BEBAB0;
+}
+
+[data-theme="graphite-noir"] {
+  --axiom-bg: #202225;
+  --axiom-surface: #292D31;
+  --axiom-surface-sub: #30353A;
+  --axiom-primary: #ECEDEB;
+  --axiom-secondary: #A5AAA8;
+  --axiom-border: #41464A;
+  --axiom-accent: #B4BBB5;
+  --axiom-accent-hover: #C5CCC6;
+  --axiom-accent-text: #202225;
+  --axiom-canvas-fill: rgba(180, 187, 181, 0.18);
+  --axiom-scrollbar-thumb: #41464A;
+  --axiom-scrollbar-thumb-hover: #50565B;
+}
+
+[data-theme="midnight"] {
+  --axiom-bg: #171F2B;
+  --axiom-surface: #202B3A;
+  --axiom-surface-sub: #263448;
+  --axiom-primary: #E8EDF3;
+  --axiom-secondary: #A3B0C0;
+  --axiom-border: #344458;
+  --axiom-accent: #829BB7;
+  --axiom-accent-hover: #97B0CD;
+  --axiom-accent-text: #171F2B;
+  --axiom-canvas-fill: rgba(130, 155, 183, 0.18);
+  --axiom-scrollbar-thumb: #344458;
+  --axiom-scrollbar-thumb-hover: #435872;
+}
+
+[data-theme="forest-slate"] {
+  --axiom-bg: #202824;
+  --axiom-surface: #29332E;
+  --axiom-surface-sub: #313D36;
+  --axiom-primary: #E8EDE8;
+  --axiom-secondary: #A7B2A9;
+  --axiom-border: #414F46;
+  --axiom-accent: #9BAF9D;
+  --axiom-accent-hover: #ADC2AF;
+  --axiom-accent-text: #202824;
+  --axiom-canvas-fill: rgba(155, 175, 157, 0.18);
+  --axiom-scrollbar-thumb: #414F46;
+  --axiom-scrollbar-thumb-hover: #526358;
+}
+
+[data-theme="paper-ink"] {
+  --axiom-bg: #EAE4D9;
+  --axiom-surface: #F7F3EA;
+  --axiom-surface-sub: #EDE7DC;
+  --axiom-primary: #332F29;
+  --axiom-secondary: #81796D;
+  --axiom-border: #D8D0C3;
+  --axiom-accent: #947653;
+  --axiom-accent-hover: #7E6445;
+  --axiom-accent-text: #FFFFFF;
+  --axiom-canvas-fill: rgba(148, 118, 83, 0.18);
+  --axiom-scrollbar-thumb: #D8D0C3;
+  --axiom-scrollbar-thumb-hover: #C5BCAD;
+}
+
+@theme {
+  --color-axiom-bg: var(--axiom-bg);
+  --color-axiom-surface: var(--axiom-surface);
+  --color-axiom-sub: var(--axiom-surface-sub);
+  --color-axiom-primary: var(--axiom-primary);
+  --color-axiom-secondary: var(--axiom-secondary);
+  --color-axiom-border: var(--axiom-border);
+  --color-axiom-accent: var(--axiom-accent);
+  --color-axiom-accent-hover: var(--axiom-accent-hover);
+  --color-axiom-accent-text: var(--axiom-accent-text);
+  --color-axiom-canvas-fill: var(--axiom-canvas-fill);
+}
+
+@layer base {
+  html, body {
+    background-color: var(--axiom-bg);
+    color: var(--axiom-primary);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    letter-spacing: -0.01em;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  code, pre, kbd, samp, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+
+  /* Refined, quiet scrollbars mapped to active theme */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--axiom-scrollbar-thumb);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--axiom-scrollbar-thumb-hover);
+  }
+}
+
+/* Restrained focus ring */
+.focus-ring:focus-visible {
+  outline: 1.5px solid var(--axiom-accent);
+  outline-offset: 1px;
+}
